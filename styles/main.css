@@ -39,14 +39,14 @@
 }
 
 .backButton > a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
+  transform: rotateZ(-90deg);
   width: 100%;
   height: 100%;
-  color: #3bb623;
-  font-size: 1.6em;
-  font-weight: bold;
+  background-image: url("../media/up-arrow.svg");
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-position: center;
 }
 
 /* NAV */
@@ -148,7 +148,7 @@ header > .content > .headerImageContainer > .headerImage {
 .nextLink {
   position: absolute;
   left: 50%;
-  bottom: 15%;
+  bottom: 60px;
   transform: translateX(-50%);
   width: 200px;
   height: 40px;
@@ -168,45 +168,8 @@ header > .content > .headerImageContainer > .headerImage {
   transition: box-shadow 0.2s ease;
 }
 
-.nextLink > a::after {
-  content: ">";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: 50%;
-  bottom: -160%;
-  transform: translate(-50%, 0) rotateZ(90deg);
-  width: 50px;
-  height: 50px;
-  background-color: #fff;
-  color: #3bb623;
-  border-radius: 50%;
-  font-size: 1.5em;
-  font-weight: bold;
-  transition: all 0.2s ease;
-  animation: nextLink 4s 4s infinite ease;
-}
-
-.nextLink > a:hover,
-.nextLink > a:hover::after {
+.nextLink > a:hover{
   box-shadow: 0 0 6px #fff;
-}
-
-.nextLink > a:hover::after {
-  bottom: -180%;
-  animation: none;
-}
-
-@keyframes nextLink {
-  0%,
-  20% {
-    bottom: -160%;
-  }
-
-  10% {
-    bottom: -190%;
-  }
 }
 
 /* MAIN */
