@@ -1,0 +1,427 @@
+.background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../media/background.png");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  filter: brightness(1.1);
+  z-index: -1;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+}
+
+.backButton {
+    position: fixed;
+    transform: rotateZ(90deg);
+    right: 50px;
+    bottom: 50px;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    backdrop-filter: blur(4px);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.backButton.show {
+    opacity: 1;
+}
+
+.backButton > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: #3bb623;
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+/* NAV */
+
+nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+
+nav > .linkList {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+nav > .linkList > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+nav > .linkList > a:hover {
+  border-color: #fff;
+}
+
+/* HEADER */
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header > .content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: fit-content;
+  height: 60vh;
+}
+
+header > .content > .title {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 30px;
+  width: 100%;
+  height: fit-content;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(4px);
+  border-radius: 24px 2px;
+  padding: 30px;
+}
+
+header > .content > .headerImageContainer {
+  width: 100%;
+  height: 100%;
+}
+
+header > .content > .headerImageContainer > .headerImage {
+  width: 100%;
+  height: 100%;
+  background-image: url("../media/belyj-golub.png");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: top;
+  filter: brightness(0.9) drop-shadow(0 0 10px #fff);
+}
+
+.nextLink {
+  position: absolute;
+  left: 50%;
+  bottom: 15%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 40px;
+}
+
+.nextLink > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: #303030;
+  background-color: #fff;
+  backdrop-filter: blur(2px);
+  border-radius: 24px;
+  transition: box-shadow 0.2s ease;
+}
+
+.nextLink > a::after {
+  content: ">";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  bottom: -160%;
+  transform: translate(-50%, 0) rotateZ(90deg);
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  color: #bd3821;
+  border-radius: 50%;
+  font-size: 1.5em;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  animation: nextLink 4s 4s infinite ease;
+}
+
+.nextLink > a:hover,
+.nextLink > a:hover::after {
+  box-shadow: 0 0 6px #fff;
+}
+
+.nextLink > a:hover::after {
+  bottom: -180%;
+  animation: none;
+}
+
+@keyframes nextLink {
+  0%,
+  20% {
+    bottom: -160%;
+  }
+
+  10% {
+    bottom: -190%;
+  }
+}
+
+/* MAIN */
+
+main {
+  width: 100%;
+  height: fit-content;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+main > section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+main > section > .content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  grid-row-gap: 30px;
+  grid-column-gap: 60px;
+  width: 100%;
+  height: fit-content;
+}
+
+main > section > .content > .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 1/3;
+  width: 100%;
+  height: fit-content;
+}
+
+main > section > .content > .title > h1 {
+  width: 50%;
+  height: fit-content;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  border-radius: 24px;
+  text-align: center;
+  padding: 20px;
+}
+
+main > section > .content > .left,
+main > section > .content > .right {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 30px;
+  width: 100%;
+  height: 100%;
+}
+
+main > section > .content > .left > p,
+main > section > .content > .right > p,
+main > section > .content > .middle > p {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  padding: 30px;
+}
+
+main > section > .content > .left > p {
+  border-radius: 24px 2px;
+}
+
+main > section > .content > .right > p {
+  border-radius: 2px 24px;
+}
+
+main > section > .content > .middle > p {
+  border-radius: 24px;
+}
+
+main > section > .content > .middle {
+  grid-column: 1/3;
+  width: 100%;
+  height: 100%;
+}
+
+/* S1 */
+
+main > section#s1 > .content > .left > .image,
+main > section#s1 > .content > .right > .image {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 24px;
+}
+
+main > section#s1 > .content > .left > .image {
+  background-image: url("../media/s1_left.png");
+  background-size: contain;
+}
+
+main > section#s1 > .content > .right > .image {
+  background-image: url("../media/s1_right.png");
+}
+
+/* S2 */
+
+main > section#s2 > .content > .left > p,
+main > section#s2 > .content > .right > p {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 30px;
+}
+
+main > section#s2 > .content > .left > p > iframe {
+  border-radius: 24px;
+}
+
+main > section#s2 > .content > .right > p > audio {
+  width: 100%;
+}
+
+/* S3 */
+
+main > section#s3 > .content > .middle {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  border-radius: 24px;
+  padding: 30px;
+}
+
+main > section#s3 > .content > .middle > .imageContainer {
+  width: 50%;
+  height: auto;
+  float: left;
+  aspect-ratio: 16/9;
+  padding: 0 30px 30px 0;
+}
+
+main > section#s3 > .content > .middle > .imageContainer > .image {
+  width: 100%;
+  height: 100%;
+  background-image: url("../media/s3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 24px;
+}
+
+main > section#s3 > .content > .middle > p {
+  background-color: transparent;
+  border-radius: 0;
+  backdrop-filter: unset;
+  padding: 0;
+}
+
+/* FOOTER */
+
+footer {
+  width: 100%;
+  height: fit-content;
+  background-color: #303030;
+}
+
+footer > .content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  height: fit-content;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+footer > .content > .left,
+footer > .content > .right {
+  width: 100%;
+  height: 100%;
+  border-bottom: 2px solid #fff;
+  padding: 30px 0;
+}
+
+footer > .content > .left > ul,
+footer > .content > .right > ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+  list-style: none;
+}
+
+footer > .content > .left > ul > li,
+footer > .content > .right > ul > li,
+footer > .content > .left > ul > li > a,
+footer > .content > .right > ul > li > a,
+footer > .content > .left > ul > li > strong,
+footer > .content > small {
+  width: 100%;
+  height: fit-content;
+  color: #fff;
+  line-height: 1.8em;
+}
+
+footer > .content > .left > ul > li > a,
+footer > .content > .right > ul > li > a {
+  transition: color 0.2s ease;
+}
+
+footer > .content > .left > ul > li > a:hover,
+footer > .content > .right > ul > li > a:hover {
+  color: #3bb623;
+}
+
+footer > .content > small {
+  padding: 30px 0;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ebffe3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #98ff83;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7bda68;
+}
