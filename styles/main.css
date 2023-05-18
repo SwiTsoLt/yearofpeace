@@ -20,33 +20,33 @@
 }
 
 .backButton {
-    position: fixed;
-    transform: rotateZ(90deg);
-    right: 50px;
-    bottom: 50px;
-    width: 50px;
-    height: 50px;
-    background-color: #fff;
-    backdrop-filter: blur(4px);
-    border-radius: 50%;
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    z-index: 999;
+  position: fixed;
+  transform: rotateZ(90deg);
+  right: 50px;
+  bottom: 50px;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  backdrop-filter: blur(4px);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 999;
 }
 
 .backButton.show {
-    opacity: 1;
+  opacity: 1;
 }
 
 .backButton > a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    color: #3bb623;
-    font-size: 1.6em;
-    font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: #3bb623;
+  font-size: 1.6em;
+  font-weight: bold;
 }
 
 /* NAV */
@@ -121,6 +121,13 @@ header > .content > .title > h1 > a {
   font-size: 1em;
   line-height: normal;
   font-weight: bold;
+  border-bottom: 2px dashed #303030;
+  padding-bottom: 4px;
+  transition: border-color 0.2s ease;
+}
+
+header > .content > .title > h1 > a:hover {
+  border-color: #3bb623;
 }
 
 header > .content > .headerImageContainer {
@@ -173,7 +180,7 @@ header > .content > .headerImageContainer > .headerImage {
   width: 50px;
   height: 50px;
   background-color: #fff;
-  color: #bd3821;
+  color: #3bb623;
   border-radius: 50%;
   font-size: 1.5em;
   font-weight: bold;
@@ -256,7 +263,6 @@ main > section > .content > .left,
 main > section > .content > .right {
   display: flex;
   flex-direction: column;
-  grid-gap: 30px;
   width: 100%;
   height: 100%;
 }
@@ -289,6 +295,26 @@ main > section > .content > .middle {
 
 /* S1 */
 
+main > section > .content > .left,
+main > section > .content > .right {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+}
+
+main > section > .content > .left {
+  border-radius: 24px 2px;
+}
+
+main > section > .content > .right {
+  border-radius: 2px 24px;
+}
+
+main > section > .content > .left > p,
+main > section > .content > .right > p {
+  background-color: transparent;
+  backdrop-filter: none;
+}
+
 main > section#s1 > .content > .left > .image,
 main > section#s1 > .content > .right > .image {
   width: 100%;
@@ -297,16 +323,19 @@ main > section#s1 > .content > .right > .image {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  border-radius: 24px;
+  background-color: #fff;
 }
 
 main > section#s1 > .content > .left > .image {
   background-image: url("../media/s1_left.png");
-  background-size: contain;
+  background-size: 60%;
+  border-radius: 2px 2px 24px 2px;
 }
 
 main > section#s1 > .content > .right > .image {
   background-image: url("../media/s1_right.png");
+  border-radius: 2px 24px 2px 2px;
+  background-size: 80%;
 }
 
 /* S2 */
@@ -319,11 +348,14 @@ main > section#s2 > .content > .right > p {
 }
 
 main > section#s2 > .content > .left > p > iframe {
+  box-shadow: 0 0 8px #444;
   border-radius: 24px;
 }
 
 main > section#s2 > .content > .right > p > audio {
   width: 100%;
+  box-shadow: 0 0 8px #888;
+  border-radius: 24px;
 }
 
 /* S3 */
@@ -351,6 +383,7 @@ main > section#s3 > .content > .middle > .imageContainer > .image {
   background-size: cover;
   background-position: center;
   border-radius: 24px;
+  box-shadow: 0 0 8px #888;
 }
 
 main > section#s3 > .content > .middle > p {
@@ -423,17 +456,13 @@ footer > .content > small {
 /* SCROLLBAR */
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #ebffe3;
+  background: #ffffff;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #98ff83;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #7bda68;
+  background: #303030;
 }
