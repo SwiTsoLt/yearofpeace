@@ -30,12 +30,14 @@
   backdrop-filter: blur(4px);
   border-radius: 50%;
   opacity: 0;
+  pointer-events: none;
   transition: opacity 0.2s ease;
   z-index: 999;
 }
 
 .backButton.show {
   opacity: 1;
+  pointer-events: all;
 }
 
 .backButton > a {
